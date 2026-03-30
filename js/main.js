@@ -13,6 +13,16 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // Initialize Bootstrap ScrollSpy
+    const scrollSpyContainer = document.body;
+    const scrollSpyTarget = document.getElementById('navbarNav');
+    if (scrollSpyTarget) {
+        new bootstrap.ScrollSpy(scrollSpyContainer, {
+            target: '#navbarNav',
+            offset: 100
+        });
+    }
+
     // 2. Scroll Reveal Animation using Intersection Observer
     const revealElements = document.querySelectorAll('.reveal');
     const serviceCards = document.querySelectorAll('.service-card');
@@ -73,9 +83,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
                 
                 // Close mobile menu if open
-                const navbarToggler = document.querySelector('.navbar-toggler');
                 const navbarCollapse = document.querySelector('.navbar-collapse');
                 if (navbarCollapse.classList.contains('show')) {
+                    const navbarToggler = document.querySelector('.navbar-toggler');
                     navbarToggler.click();
                 }
             }

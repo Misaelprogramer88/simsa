@@ -41,17 +41,95 @@ h1, h2, h3, h4, h5, h6 {
   transition: all 0.3s ease;
 }
 .navbar.scrolled {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+  background: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05) !important;
+  padding: 0.8rem 0 !important;
 }
 .navbar-nav .nav-link {
   color: var(--text-dark);
   font-weight: 500;
   font-size: 0.95rem;
-  transition: color 0.2s;
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 0.5rem 0;
+}
+.navbar-nav .nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2.5px;
+  bottom: 0px;
+  left: 0;
+  background-color: var(--brand-blue);
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 2px;
+}
+.navbar-nav .nav-link:hover::after, 
+.navbar-nav .nav-link.active::after {
+  width: 100%;
 }
 .navbar-nav .nav-link:hover, .navbar-nav .nav-link.active {
-  color: var(--brand-red);
+  color: var(--brand-blue) !important;
 }
+
+/* Dropdown styling & Hover logic */
+.dropdown-menu {
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.1) !important;
+  border: 1px solid rgba(0,0,0,0.05);
+  animation: dropdownFade 0.3s ease-out;
+  margin-top: 10px !important;
+  padding: 0.8rem !important;
+}
+
+@media (min-width: 992px) {
+  .nav-item.dropdown:hover > .dropdown-menu {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  .dropdown-menu {
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+  }
+}
+
+.dropdown-item {
+  font-weight: 500;
+  color: var(--text-dark);
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.dropdown-item:hover {
+  background-color: var(--bg-light);
+  color: var(--brand-blue);
+  padding-left: 1.4rem;
+}
+
+@keyframes dropdownFade {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Social icons blue */
+.nav-social-icon {
+  color: #000000 !important;
+  transition: all 0.3s ease;
+}
+
+.nav-social-icon:hover {
+  color: var(--brand-blue) !important;
+  transform: translateY(-4px);
+}
+
 
 /* ================= Buttons ================= */
 .btn-brand {
@@ -169,18 +247,39 @@ h1, h2, h3, h4, h5, h6 {
   color: #ffffff;
 }
 .service-card {
-  border-radius: 12px;
+  border-radius: 15px;
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  background-color: #ffffff;
 }
 .service-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2) !important;
+  transform: translateY(-5px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15) !important;
 }
 .service-card .card-img-top {
-  height: 200px;
+  height: 260px;
   object-fit: cover;
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
+.service-card:hover .card-img-top {
+  transform: scale(0.96);
+  filter: blur(6px);
+  opacity: 0.85;
+}
+.service-card .card-body {
+  background-color: #ffffff;
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  position: relative;
+  z-index: 2;
+  border-top: 1px solid rgba(0,0,0,0.05);
+  box-shadow: 0 -5px 15px rgba(0,0,0,0.02);
+}
+.service-card:hover .card-body {
+  transform: translateY(-30px);
+  border-top: 1px solid transparent;
+  box-shadow: 0 -15px 30px rgba(0,0,0,0.08);
+}
+
 
 /* ================= Projects Section ================= */
 .project-img {
@@ -244,7 +343,7 @@ h1, h2, h3, h4, h5, h6 {
   content: "Imagen Pendiente";
 }
 
-/* ================= Animations (Scroll Reveal) ================= */
+/* Base Reveal Animation for other elements */
 .reveal {
   opacity: 0;
   transform: translateY(30px);
@@ -255,12 +354,24 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateY(0);
 }
 
-/* Stagger reveals inside grids if needed */
+/* Staggered delays for Services */
 .services-section .col-md-6:nth-child(1) .reveal { transition-delay: 0.1s; }
-.services-section .col-md-6:nth-child(2) .reveal { transition-delay: 0.2s; }
-.services-section .col-md-6:nth-child(3) .reveal { transition-delay: 0.3s; }
-.services-section .col-md-6:nth-child(4) .reveal { transition-delay: 0.4s; }
-.services-section .col-md-6:nth-child(5) .reveal { transition-delay: 0.5s; }
+.services-section .col-md-6:nth-child(2) .reveal { transition-delay: 0.25s; }
+.services-section .col-md-6:nth-child(3) .reveal { transition-delay: 0.4s; }
+.services-section .col-md-6:nth-child(4) .reveal { transition-delay: 0.55s; }
+.services-section .col-md-6:nth-child(5) .reveal { transition-delay: 0.7s; }
+
+/* Scale & Fade Entry Animation (Option 1) for Service Cards */
+.service-card.reveal {
+  opacity: 0;
+  transform: scale(0.85) translateY(20px);
+  transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.service-card.reveal.active {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
 
 /* Responsive adjustments */
 @media (max-width: 991px) {
