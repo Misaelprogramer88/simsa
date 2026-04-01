@@ -28,6 +28,11 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--brand-blue-dark);
 }
 
+.fw-black {
+  font-weight: 800;
+  letter-spacing: -2px;
+}
+
 /* Typography Overrides */
 .text-brand-green {
   color: var(--brand-green) !important;
@@ -130,6 +135,37 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateY(-4px);
 }
 
+/* Mobile Navbar Dropdown Auto-Expand */
+@media (max-width: 991px) {
+  .navbar-nav .dropdown-toggle::after {
+    display: none !important;
+  }
+  .navbar-nav .dropdown-menu {
+    display: block !important;
+    position: static !important;
+    float: none !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding-left: 1.5rem !important;
+    padding-top: 0 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    margin-top: 5px !important;
+  }
+  .dropdown-item {
+    color: var(--text-dark) !important;
+    font-size: 0.9rem !important;
+    padding: 0.5rem 1rem !important;
+  }
+  .dropdown-item:hover {
+    background-color: rgba(35, 76, 123, 0.05) !important;
+    color: var(--brand-blue) !important;
+    padding-left: 1rem !important;
+  }
+}
+
 
 /* ================= Buttons ================= */
 .btn-brand {
@@ -162,14 +198,46 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ================= Hero Section ================= */
 .hero-section {
-  min-height: calc(100vh - 76px);
-  margin-top: 76px; /* Offset for fixed navbar */
+  min-height: 100vh;
+  margin-top: 0;
   /* Background with Parallax effect */
-  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
-              url('../imagenes/cnc.jpg') center/cover no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+              url('../imagenes/fondo.png') center/cover no-repeat;
   background-attachment: fixed;
   background-color: var(--brand-blue-dark); /* fallback */
   position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.hero-content h1 {
+  color: white !important;
+  text-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.hero-content .reveal {
+  opacity: 0;
+  transform: translateX(-50px);
+  filter: blur(10px);
+  transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.hero-content .reveal.active {
+  opacity: 1;
+  transform: translateX(0);
+  filter: blur(0);
+}
+
+/* Button outline light adjustments */
+.btn-outline-light {
+  border-width: 2px;
+  font-weight: 600;
+  border-color: rgba(255,255,255,0.3);
+}
+.btn-outline-light:hover {
+  background-color: white;
+  color: var(--brand-blue-dark);
+  border-color: white;
 }
 
 /* ================= About Us (Image Grid) ================= */
