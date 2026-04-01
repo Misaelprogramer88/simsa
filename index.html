@@ -336,14 +336,14 @@
                             <p class="mb-0 text-white-50 small mt-1">Completa el formulario y te responderemos a tu correo a la brevedad posible.</p>
                         </div>
                         <div class="card-body p-4 p-md-5">
-                            <!-- Sustituye 'contacto@simsa.com.mx' por el correo real al que quieres que lleguen -->
-                            <form action="https://formsubmit.co/misaelrivera010@gmail.com" method="POST">
-                                
-                                <!-- Campos ocultos para configuración de FormSubmit -->
-                                <input type="hidden" name="_subject" value="Nueva Solicitud de Cotización Web">
-                                <input type="hidden" name="_captcha" value="false">
-                                <input type="hidden" name="_template" value="table">
-                                
+                            <form action="https://api.web3forms.com/submit" method="POST">
+
+                                <!-- Campos ocultos Web3Forms -->
+                                <input type="hidden" name="access_key" value="0322015b-df5e-4446-ade3-6bd253d532b7">
+                                <input type="hidden" name="subject" value="Nueva Solicitud de Cotización Web - SIMSA">
+                                <input type="hidden" name="from_name" value="Formulario SIMSA">
+                                <input type="hidden" name="redirect" value="false">
+
                                 <div class="row g-4">
                                     <div class="col-md-6">
                                         <label for="nombre" class="form-label fw-bold text-muted small text-uppercase">Nombre Completo</label>
