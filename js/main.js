@@ -42,11 +42,10 @@ document.addEventListener('DOMContentLoaded', () => {
  
     const revealObserver = new IntersectionObserver(function(entries, observer) {
         entries.forEach(entry => {
-            if (!entry.isIntersecting) {
-                return;
-            } else {
+            if (entry.isIntersecting) {
                 entry.target.classList.add('active');
-                // observer.unobserve(entry.target);
+            } else {
+                entry.target.classList.remove('active');
             }
         });
     }, revealOptions);
