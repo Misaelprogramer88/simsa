@@ -280,6 +280,23 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 -15px 30px rgba(0,0,0,0.08);
 }
 
+/* ================= Service Detail Pages ================= */
+.service-info-section {
+  background-color: var(--brand-blue);
+}
+.info-blue-left {
+  border-right: 2px solid rgba(255, 255, 255, 0.2);
+}
+@media (max-width: 991px) {
+  .info-blue-left {
+    border-right: none;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+
 
 /* ================= Projects Section ================= */
 .project-img {
