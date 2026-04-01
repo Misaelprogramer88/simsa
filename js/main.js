@@ -94,10 +94,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // 4. Formulario Web3Forms con SweetAlert2
     const form = document.getElementById('cotizacionForm');
     const submitBtn = document.getElementById('submitBtn');
+    let isSubmitting = false;
  
     if (form) {
         form.addEventListener('submit', async function (e) {
             e.preventDefault();
+            e.stopImmediatePropagation();
+
+            if (isSubmitting) return;
+            isSubmitting = true;
  
             submitBtn.disabled = true;
             submitBtn.innerHTML = 'Enviando... <i class="bi bi-hourglass-split ms-2"></i>';
@@ -140,6 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     confirmButtonColor: '#1a365d',
                 });
             } finally {
+                isSubmitting = false;
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = 'Enviar Solicitud <i class="bi bi-send ms-2"></i>';
             }
