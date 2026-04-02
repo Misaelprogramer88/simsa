@@ -106,31 +106,35 @@
     <section id="nosotros" class="about-section py-5 my-5 reveal">
         <div class="container py-lg-5">
             <div class="row align-items-center gx-5">
-                <!-- Left: Masonry/Grid Images -->
+                <!-- Left: Masonry/Grid Images (5 Images) -->
                 <div class="col-lg-6 mb-5 mb-lg-0 order-2 order-lg-1 mt-4 mt-lg-0">
                     <div class="image-grid">
-                        <img src="imagenes/i1.jpeg" alt="Industrial Image 1"
-                            class="img-fluid rounded-3 grid-img-1 reveal"
-                            onerror="this.classList.add('placeholder-img')">
-                        <img src="imagenes/i2.jpeg" alt="Industrial Image 2"
-                            class="img-fluid rounded-3 grid-img-2 reveal"
-                            onerror="this.classList.add('placeholder-img')">
-                        <img src="imagenes/i3.jpeg" alt="Industrial Image 3"
-                            class="img-fluid rounded-3 grid-img-3 reveal"
-                            onerror="this.classList.add('placeholder-img')">
-                        <img src="imagenes/i3.jpeg" alt="Industrial Image 4"
-                            class="img-fluid rounded-3 grid-img-4 reveal"
-                            onerror="this.classList.add('placeholder-img')">
+                        <div class="reveal">
+                            <img src="imagenes/cnc.jpg" alt="Industrial 1" class="grid-img-1">
+                        </div>
+                        <div class="reveal" style="transition-delay: 0.2s;">
+                            <img src="imagenes/i1.jpeg" alt="Industrial 2" class="grid-img-2">
+                        </div>
+                        <div class="reveal" style="transition-delay: 0.4s;">
+                            <img src="imagenes/i2.jpeg" alt="Industrial 3" class="grid-img-3">
+                        </div>
+                        <div class="reveal" style="transition-delay: 0.6s;">
+                            <img src="imagenes/i4.jpeg" alt="Industrial 4" class="grid-img-4">
+                        </div>
+                        <div class="reveal" style="transition-delay: 0.8s;">
+                            <img src="imagenes/i3.jpeg" alt="Industrial 5" class="grid-img-5">
+                        </div>
                     </div>
                 </div>
 
                 <!-- Right: Content -->
                 <div class="col-lg-6 order-1 order-lg-2">
                     <h2 class="section-title mb-4">Sobre Nosotros</h2>
-                    <p class="text-muted mb-4 lead">En SIMSA ofrecemos soluciones integrales de ingeniería para la industria manufacturera, enfocadas en optimizar procesos, reducir costos y mejorar la eficiencia operativa. Contamos con experiencia en maquinado CNC de precisión, fabricación de fixtures y suministro de refacciones y materia prima.
+                    <p class="text-muted mb-4 lead">
+                       En SIMSA ofrecemos soluciones integrales de ingeniería para la industria manufacturera, enfocadas en optimizar procesos, reducir costos y mejorar la eficiencia operativa. Contamos con experiencia en maquinado CNC de precisión, fabricación de fixtures y suministro de refacciones y materia prima.
 
-Trabajamos con un enfoque orientado a resultados, garantizando calidad, tiempos de entrega competitivos y atención personalizada. Gracias a nuestra red de talleres y aliados estratégicos, brindamos soluciones ágiles, confiables y adaptadas a cada cliente, convirtiéndonos en un socio clave para el crecimiento de su operación.
-.</p>
+                        Trabajamos con un enfoque orientado a resultados, garantizando calidad, tiempos de entrega competitivos y atención personalizada. Gracias a nuestra red de talleres y aliados estratégicos, brindamos soluciones ágiles, confiables y adaptadas a cada cliente, convirtiéndonos en un socio clave para el crecimiento de su operación.
+                    </p>
                     <a href="#contacto" class="btn btn-primary btn-brand">Cotizar Proyecto</a>
                 </div>
             </div>
@@ -138,10 +142,15 @@ Trabajamos con un enfoque orientado a resultados, garantizando calidad, tiempos 
     </section>
 
     <!-- Wave top for Services -->
-    <div class="wave-container-top" style="line-height: 0;">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 200" class="wave-svg">
+    <div class="wave-container-top" style="line-height: 0; position: relative; z-index: 1;">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class="wave-svg">
+            <!-- Secondary Light Wave (Sigue el contorno de la azul) -->
+            <path fill="#366BC7" fill-opacity="1"
+                d="M0,172L60,156C120,140,240,108,360,118.7C480,129,600,183,720,204C840,225,960,215,1080,182.7C1200,151,1320,97,1380,70.7L1440,44L1440,320L1380,320C1320,320,1200,320,1080,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
+            </path>
+            <!-- Primary Dark Wave -->
             <path fill="#1a365d" fill-opacity="1"
-                d="M0,128L60,117.3C120,107,240,85,360,96C480,107,600,149,720,165.3C840,181,960,171,1080,144C1200,117,1320,75,1380,53.3L1440,32L1440,200L1380,200C1320,200,1200,200,1080,200C960,200,840,200,720,200C600,200,480,200,360,200C240,200,120,200,60,200L0,200Z">
+                d="M0,192L60,176C120,160,240,128,360,138.7C480,149,600,203,720,224C840,245,960,235,1080,202.7C1200,171,1320,117,1380,90.7L1440,64L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z">
             </path>
         </svg>
     </div>
@@ -216,13 +225,51 @@ Trabajamos con un enfoque orientado a resultados, garantizando calidad, tiempos 
     </section>
 
     <!-- Wave bottom for Services -->
-    <div class="wave-container-bottom" style="line-height: 0; background-color: #1a365d;">
+    <div class="wave-container-bottom" style="line-height: 0; background-color: #1a365d; position: relative;">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" class="wave-svg">
+            <!-- Secondary Light Wave (Depth) -->
+            <path fill="#3463B3" fill-opacity="1"
+                d="M0,32L60,42.7C120,53,240,75,360,80C480,85,600,75,720,58.7C840,43,960,21,1080,21.3C1200,21,1320,43,1380,53.3L1440,64L1440,120L1380,120C1320,120,1200,120,1080,120C960,120,840,120,720,120C600,120,480,120,360,120C240,120,120,120,60,120L0,120Z">
+            </path>
+            <!-- Primary White Wave -->
             <path fill="#ffffff" fill-opacity="1"
                 d="M0,64L80,80C160,96,320,128,480,122.7C640,117,800,75,960,64C1120,53,1280,75,1360,85.3L1440,96L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z">
             </path>
         </svg>
     </div>
+
+    <!-- Nuestros Proyectos -->
+    <section id="proyectos" class="projects-section py-5 reveal">
+        <div class="container py-lg-5">
+            <h2 class="section-title text-center mb-5">Nuestros Proyectos</h2>
+            
+            <!-- Project 1 -->
+            <div class="row align-items-center project-row mb-5 g-5">
+                <div class="col-lg-6 position-relative order-2 order-lg-1">
+                    <div class="project-bg-blob"></div>
+                    <img src="imagenes/cnc.jpg" alt="Proyecto CNC" class="img-fluid project-img reveal">
+                </div>
+                <div class="col-lg-6 order-1 order-lg-2">
+                    <div class="project-line mb-4"></div>
+                    <h3 class="display-6 fw-bold mb-4">Proyecto 1</h3>
+                    <p class="text-muted lead">Fabricación y reparación de componentes industriales con altos estándares de precisión CNC y materiales certificados.</p>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="row align-items-center project-row g-5">
+                <div class="col-lg-6 order-2 order-lg-1">
+                    <div class="project-line mb-4"></div>
+                    <h3 class="display-6 fw-bold mb-4">Proyecto 2</h3>
+                    <p class="text-muted lead">Soluciones de mantenimiento integral y diseño de fixtures para líneas de producción automatizadas.</p>
+                </div>
+                <div class="col-lg-6 position-relative order-1 order-lg-2">
+                    <div class="project-bg-blob right"></div>
+                    <img src="imagenes/Maquinados.png" alt="Proyecto Maquinados" class="img-fluid project-img reveal">
+                </div>
+            </div>
+        </div>
+    </section>
 
 
     <!-- Contáctenos -->
