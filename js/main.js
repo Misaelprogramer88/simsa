@@ -44,13 +44,21 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('active');
+                // Si tiene la clase reveal-once, dejamos de observar para que no se repita
+                if (entry.target.classList.contains('reveal-once')) {
+                    observer.unobserve(entry.target);
+                }
             } else {
-                entry.target.classList.remove('active');
+                // Solo removemos si NO tiene reveal-once (comportamiento original)
+                if (!entry.target.classList.contains('reveal-once')) {
+                    entry.target.classList.remove('active');
+                }
             }
         });
     }, revealOptions);
- 
-    revealElements.forEach(el => {
+
+    // Observar elementos con .reveal y .reveal-once
+    document.querySelectorAll('.reveal, .reveal-once').forEach(el => {
         revealObserver.observe(el);
     });
  

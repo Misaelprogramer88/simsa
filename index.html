@@ -118,19 +118,19 @@
                 <!-- Left: Masonry/Grid Images (5 Images) -->
                 <div class="col-lg-6 mb-5 mb-lg-0 order-2 order-lg-1 mt-4 mt-lg-0">
                     <div class="image-grid">
-                        <div class="reveal">
+                        <div class="reveal-once">
                             <img src="imagenes/sobre-nosotros-2.jpg" alt="Industrial 1" class="grid-img-1">
                         </div>
-                        <div class="reveal" style="transition-delay: 0.2s;">
+                        <div class="reveal-once" style="transition-delay: 0.2s;">
                             <img src="imagenes/sobre-nosotros-1.jpg" alt="Industrial 2" class="grid-img-2">
                         </div>
-                        <div class="reveal" style="transition-delay: 0.4s;">
+                        <div class="reveal-once" style="transition-delay: 0.4s;">
                             <img src="imagenes/sobre-nosotros-3.jpg" alt="Industrial 3" class="grid-img-3">
                         </div>
-                        <div class="reveal" style="transition-delay: 0.6s;">
+                        <div class="reveal-once" style="transition-delay: 0.6s;">
                             <img src="imagenes/sobre-nosotros-5.jpg" alt="Industrial 4" class="grid-img-4">
                         </div>
-                        <div class="reveal" style="transition-delay: 0.8s;">
+                        <div class="reveal-once" style="transition-delay: 0.8s;">
                             <img src="imagenes/sobre-nosotros-4.jpg" alt="Industrial 5" class="grid-img-5">
                         </div>
                     </div>
@@ -300,13 +300,15 @@
 
                         <!-- Email -->
                         <div class="d-flex mb-4 align-items-center bg-white p-4 rounded-4 shadow-sm reveal">
-                            <div class="contact-icon bg-light text-brand-green rounded-circle d-flex align-items-center justify-content-center me-3 shadow-sm"
+                            <a href="mailto:contacto@simsasoluciones.com" class="contact-icon bg-light text-brand-green rounded-circle d-flex align-items-center justify-content-center me-3 shadow-sm text-decoration-none"
                                 style="width: 50px; height: 50px; font-size: 1.5rem;">
                                 <i class="bi bi-envelope"></i>
-                            </div>
+                            </a>
                             <div>
                                 <h6 class="mb-0 fw-bold">Correo electrónico</h6>
-                                <p class="mb-0 text-muted small">contacto@simsasoluciones.com<br>Respuesta en menos de 24 hrs
+                                <p class="mb-0 text-muted small">
+                                    <a href="mailto:contacto@simsasoluciones.com" class="text-muted text-decoration-none">contacto@simsasoluciones.com</a><br>
+                                    Respuesta en menos de 24 hrs
                                 </p>
                             </div>
                         </div>
@@ -354,6 +356,7 @@
                                 <input type="hidden" name="subject" value="Nueva Solicitud de Cotización Web - SIMSA">
                                 <input type="hidden" name="from_name" value="Formulario SIMSA">
                                 <input type="hidden" name="redirect" value="false">
+                                <input type="hidden" name="botcheck" value="">
 
                                 <div class="row g-4">
                                     <div class="col-md-6">
